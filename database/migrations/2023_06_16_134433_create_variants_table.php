@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('product_id');
             $table->string('name');
             $table->string('sku');
-            $table->decimal('aditional_cost', 8, 2);
+            $table->decimal('additional_cost', 8, 2);
             $table->integer('stock_count');
             $table->timestamps();
 

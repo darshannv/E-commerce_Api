@@ -36,9 +36,7 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-
+    public function store(Request $request){
         
         $request->validate([
             'name' => 'required',
@@ -106,20 +104,21 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-       
+        
         $request->validate([
             'name' => 'required',
             'description' => 'required',
             'price' => 'required|numeric',
             'variants' => 'required|array',
-            'variants.*.name' => 'required',
-            'variants.*.sku' => 'required',
-            'variants.*.additional_cost' => 'required|numeric',
-            'variants.*.stock_count' => 'required|integer'
+            '*.variants.*.name' => 'required',
+            '*.variants.*.sku' => 'required',
+            '*.variants.*.additional_cost' => 'required|numeric',
+            '*.variants.*.stock_count' => 'required|integer'
 
         ]);
-
+       // 
         $product = Product::findOrFail($product->id);
+       
         $product->update([
             'name' => $request->name,
             'description' => $request->description,
@@ -154,7 +153,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        $detail = Product::findOrFail($product);
+        $detail = Product::findOrFail($product->id);
         $detail->delete();
         return response()->json(null, 204);
     }

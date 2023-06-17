@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Variant extends Model
 {
     use HasFactory;
-    protected $guarded = [];
-
     
+    protected $fillable= ['name', 'sku', 'additional_cost', 'stock_count', 'product_id'];
+
 }
