@@ -2,6 +2,7 @@ E-commerce System REST API
 This project is an e-commerce system implemented as a REST API using Laravel. It provides endpoints to perform various operations such as creating, reading, updating, and deleting products, as well as searching for products based on name, description, or variant name.
 
 The API will now be accessible at http://localhost:8000.
+The Post link for Collection - https://api.postman.com/collections/13450874-519bc1d8-28da-4ba3-b68f-42bf5e32fcd4?access_key=PMAT-01H33XPXN9CQYRGDR6KCMRYVZA
 
 Interacting with the API
 You can interact with the API using any HTTP client, such as Postman or cURL. Here are the available endpoints:
